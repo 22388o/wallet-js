@@ -1,5 +1,5 @@
 {
-  "name": "account",
+  "name": "@dojima-wallet/account",
   "version": "0.0.1-alpha.1",
   "description": "creates accounts for all layer1, layer2 supported chains.",
   "keywords": [
@@ -7,23 +7,26 @@
     "blockchain",
     "dojima"
   ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/lib/index.d.ts",
   "author": "bhaagiKenpachi <bhagath.reddy@dojima.network>",
   "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
-  "license": "ISC",
-  "main": "lib/account.js",
+  "license": "MIT",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "dist": "dist",
+    "src": "lib"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
