@@ -1,1 +1,1 @@
-export * as Network from './network'
+export * as Network from './network';

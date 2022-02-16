@@ -1,9 +1,9 @@
-import * as web3 from "@solana/web3.js";
+import * as web3 from '@solana/web3.js';
 
 export default async function solana() {
   var connection = new web3.Connection(
-    web3.clusterApiUrl("devnet"),
-    "confirmed"
+    web3.clusterApiUrl('devnet'),
+    'confirmed'
   );
 
   // Generate a new wallet keypair and airdrop SOL
@@ -16,7 +16,7 @@ export default async function solana() {
 
   //wait for airdrop confirmation
   await connection.confirmTransaction(airdropSignature);
-  
+
   // Get account balance
   var balance = await connection.getBalance(wallet.publicKey);
   console.log(balance);
@@ -44,5 +44,5 @@ export default async function solana() {
     transaction,
     [wallet]
   );
-  console.log("SIGNATURE", signature);
+  console.log('SIGNATURE', signature);
 }

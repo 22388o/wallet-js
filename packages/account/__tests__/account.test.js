@@ -3,5 +3,5 @@
 const account = require('..');
 
 describe('account', () => {
-    it('needs tests');
+  it('needs tests');
 });
