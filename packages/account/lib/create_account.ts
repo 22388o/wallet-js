@@ -1,22 +1,22 @@
-import * as bip39 from 'bip39';
-import { Keypair } from '@solana/web3.js';
-import Arweave from 'arweave';
-import { getKeyFromMnemonic } from 'arweave-mnemonic-keys';
-import { Keyring } from '@polkadot/api';
-import { mnemonicValidate } from '@polkadot/util-crypto';
-import BIP32Factory from 'bip32';
-import { payments, networks } from 'bitcoinjs-lib';
-import * as ecc from 'tiny-secp256k1';
-import { hdkey } from 'ethereumjs-wallet';
-import { NetworkType } from '@dojima-wallet/types/dist/lib/network';
+import * as bip39 from "bip39";
+import { Keypair } from "@solana/web3.js";
+import Arweave from "arweave";
+import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
+import { Keyring } from "@polkadot/api";
+import { mnemonicValidate } from "@polkadot/util-crypto";
+import BIP32Factory from "bip32";
+import { payments, networks } from "bitcoinjs-lib";
+import * as ecc from "tiny-secp256k1";
+import { hdkey } from "ethereumjs-wallet";
+import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 
 export default class CreateAccount {
   _mnemonic: string;
   network: string;
   //arweave configuration to talk to blockchain
   arweave = Arweave.init({
-    host: 'htts://arweave.net/',
-    protocol: 'https',
+    host: "htts://arweave.net/",
+    protocol: "https",
     timeout: 100000,
   });
   bip32 = BIP32Factory(ecc);
@@ -69,7 +69,7 @@ export default class CreateAccount {
     var key = await bip39.mnemonicToSeed(this._mnemonic);
     var hdwallet = hdkey.fromMasterSeed(key);
     var wallet = hdwallet.derivePath(path).getWallet();
-    var address = '0x' + wallet.getAddress().toString('hex');
+    var address = "0x" + wallet.getAddress().toString("hex");
     return address;
   }
 
@@ -83,37 +83,45 @@ export default class CreateAccount {
 
     const isValidMnemonic = mnemonicValidate(this._mnemonic);
     if (!isValidMnemonic) {
-      throw Error('Invalid Mnemonic');
+      throw Error("Invalid Mnemonic");
     }
 
     // Add an account derived from the mnemonic
     const account = keyring.addFromUri(this._mnemonic);
     const address = account.address;
-    const jsonWallet = JSON.stringify(keyring.toJson(address), null, 2);
-    return jsonWallet;
+    // const jsonWallet = JSON.stringify(keyring.toJson(address), null, 2);
+    return address;
   }
 
   getSolana() {
     const seed = bip39.mnemonicToSeedSync(this._mnemonic).slice(0, 32);
     const solanaAccount = Keypair.fromSeed(seed);
     const publicKey = solanaAccount.publicKey.toString();
-    const privateKey = Buffer.from(solanaAccount.secretKey).toString('base64');
+    const privateKey = Buffer.from(solanaAccount.secretKey).toString("base64");
     console.log([publicKey, privateKey]);
-    return solanaAccount;
+    return publicKey;
   }
 
   async create() {
-    const network = this.network ?? 'mainnet';
+    const network = this.network ?? "mainnet";
 
     const bitcoinNetwork =
-      network === 'mainnet' ? networks.bitcoin : networks.testnet;
+      network === "mainnet" ? networks.bitcoin : networks.testnet;
 
-    const aacc = await this.getArweave();
-    const bacc = this.getBitcoin(bitcoinNetwork);
-    const eacc = await this.getEthereum();
-    const pacc = this.getPolkadot();
-    const sacc = this.getSolana();
+    const arweaveAddress = await this.getArweave();
+    const bitcoinAddress = this.getBitcoin(bitcoinNetwork);
+    const ethereumAddress = await this.getEthereum();
+    const polkadotAddress = this.getPolkadot();
+    const solanaAddress = this.getSolana();
 
-    return [aacc, bacc, eacc, pacc, [sacc.publicKey, sacc.secretKey]];
+    // return [aacc, bacc, eacc, pacc, [sacc.publicKey, sacc.secretKey]];
+
+    return {
+      arweaveAddress,
+      bitcoinAddress,
+      ethereumAddress,
+      polkadotAddress,
+      solanaAddress,
+    };
   }
 }
