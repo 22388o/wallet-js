@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/account",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "creates accounts for all layer1, layer2 supported chains.",
   "keywords": [
     "account",
@@ -30,6 +30,9 @@
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@dojima-wallet/types": "^0.0.1-alpha.1"
