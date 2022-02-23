@@ -1,13 +1,13 @@
 import { ApiPromise, WsProvider } from "@polkadot/api";
 
 export class PolkadotApi {
-  _rpcUrl: string;
-  constructor(rpcUrl: string) {
-    this._rpcUrl = rpcUrl;
+  _endpointUrl: string;
+  constructor(endpointUrl: string) {
+    this._endpointUrl = endpointUrl;
   }
 
   wsProvider() {
-    const wsProvider = new WsProvider(this._rpcUrl);
+    const wsProvider = new WsProvider(this._endpointUrl);
     return wsProvider;
   }
 
