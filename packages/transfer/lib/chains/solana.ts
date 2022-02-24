@@ -2,81 +2,52 @@ import * as web3 from "@solana/web3.js";
 
 export class SolanaChain {
   _wallet: web3.Keypair;
-  constructor(wallet: web3.Keypair) {
+  _connection: web3.Connection;
+  _airdropSignature: string;
+
+  constructor(
+    wallet: web3.Keypair,
+    connection: web3.Connection,
+    airdropSignature: string
+  ) {
     this._wallet = wallet;
-  }
-
-  connection = new web3.Connection(web3.clusterApiUrl("devnet"), "confirmed");
-
-  async airdropSignature() {
-    const airdropSignature = await this.connection.requestAirdrop(
-      this._wallet.publicKey,
-      web3.LAMPORTS_PER_SOL // Initial one dummy sol token
-    );
-    return airdropSignature;
+    this._connection = connection;
+    this._airdropSignature = airdropSignature;
   }
 
   async getBalance() {
-    let balance = await this.connection.getBalance(this._wallet.publicKey);
+    // Retrieve user token balance
+    let balance = await this._connection.getBalance(this._wallet.publicKey);
+    console.log("Balance is : " + balance);
+
     return balance;
   }
 
-  // get account info
-  // account data is bytecode that needs to be deserialized
-  // serialization and deserialization is program specific
-  async getAccountInfo() {
-    let account = await this.connection.getAccountInfo(this._wallet.publicKey);
-    return account;
-  }
+  async createTransactionAndSend(toAddress: string, amount: number) {
+    // Convert toAddress string to PublicKey
+    const to = new web3.PublicKey(toAddress);
 
-  // Add transfer instruction to transaction
-  transferTokens(to: web3.Keypair, amount: number) {
-    const toAddress = to.publicKey;
-    const _amount = amount;
+    // Add transaction for the required amount
     let transaction = new web3.Transaction().add(
       web3.SystemProgram.transfer({
         fromPubkey: this._wallet.publicKey,
-        toPubkey: toAddress,
-        lamports: _amount,
+        toPubkey: to,
+        lamports: amount,
       })
     );
-    return transaction;
-  }
 
-  // Sign transaction, broadcast, and confirm
-  async confirmTransaction(transaction: web3.Transaction) {
+    // Sign the transaction
     let signature = await web3.sendAndConfirmTransaction(
-      this.connection,
+      this._connection,
       transaction,
       [this._wallet]
     );
-    return signature;
-  }
-
-  async getSolanaDetails() {
-    // Provide receiver address
-    const to = web3.Keypair.generate();
-
-    const airdrop = await this.airdropSignature();
-
-    await this.connection.confirmTransaction(airdrop);
-
-    let balance = await this.getBalance();
-    const accountInfo = await this.getAccountInfo();
-    const transactionDetails = this.transferTokens(to, 1000000000 / 500); // Send SOL tokens for example
-    const signAddress = await this.confirmTransaction(transactionDetails); // transaction hash
-
-    // console.log(this._wallet.publicKey.toString());
-    // console.log(balance);
-    // console.log(accountInfo);
-    // console.log(transactionDetails);
-    // console.log(signAddress);
+    console.log("Transaction details: " + JSON.stringify(transaction));
+    console.log("Transaction hash : " + signature);
 
     return {
-      balance,
-      accountInfo,
-      transactionDetails,
-      signAddress,
+      signature,
+      transaction,
     };
   }
 }
