@@ -33,19 +33,16 @@ export class PolkadotChain {
   // Create transaction and send tokens.
   async createTransactionAndSend(toAddress: string, amount: number) {
     // Get a random number between 1 and 10000000000
-    const randomAmount = Math.floor(Math.random() * 10000000000 + 1);
-    console.log("Random Amount : " + randomAmount);
+    // const randomAmount = Math.floor(Math.random() * 10000000000 + 1);
+    // console.log("Random Amount : " + randomAmount);
 
     const { nonce: nonce } = await this._api.query.system.account(
       this._account.address
     );
-    console.log("Nonce : " + nonce);
+    console.log("Nonce : ", nonce);
 
     // Create transaction
-    const transferDetails = this._api.tx.balances.transfer(
-      toAddress,
-      randomAmount
-    ); // randomAmount is just for testing. Use 'number' for mainnet
+    const transferDetails = this._api.tx.balances.transfer(toAddress, amount); // randomAmount is just for testing. Use 'amount' for mainnet
 
     // Add signature for transaction
     const signer = this._api.createType(
@@ -59,14 +56,14 @@ export class PolkadotChain {
       },
       { version: this._api.extrinsicVersion }
     );
-    // console.log('Signer : '+signer);
+    // console.log('Signer : ',signer);
 
     const { signature } = this._api
       .createType("ExtrinsicPayload", signer.toPayload(), {
         version: this._api.extrinsicVersion,
       })
       .sign(this._account);
-    // console.log('Signature is : '+signature);
+    // console.log('Signature is : ',signature);
 
     transferDetails.addSignature(
       this._account.address,
@@ -76,10 +73,10 @@ export class PolkadotChain {
 
     try {
       const transactionDetails = await transferDetails.send();
-      console.log("Transaction details : " + transactionDetails);
+      console.log("Transaction details : ", transactionDetails);
       return transactionDetails;
     } catch (error) {
-      console.log("Error : " + error);
+      console.log("Error : ", error);
     }
   }
 }

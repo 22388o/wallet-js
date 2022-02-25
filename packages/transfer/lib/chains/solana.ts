@@ -18,7 +18,7 @@ export class SolanaChain {
   async getBalance() {
     // Retrieve user token balance
     let balance = await this._connection.getBalance(this._wallet.publicKey);
-    console.log("Balance is : " + balance);
+    console.log("Balance is : ", balance);
 
     return balance;
   }
@@ -42,8 +42,8 @@ export class SolanaChain {
       transaction,
       [this._wallet]
     );
-    console.log("Transaction details: " + JSON.stringify(transaction));
-    console.log("Transaction hash : " + signature);
+    console.log("Transaction details: ", transaction);
+    console.log("Transaction hash : ", signature);
 
     return {
       signature,

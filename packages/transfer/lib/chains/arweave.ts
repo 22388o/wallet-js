@@ -21,11 +21,11 @@ export class ArweaveChain {
 
     // Get balance
     let wnstBalance = await this._arweave.wallets.getBalance(this._address);
-    console.log("Winston balance is : " + wnstBalance);
+    console.log("Winston balance is : ", wnstBalance);
 
     // Convert balance from Winston to Ar. (1 Ar = 10^12)
     const arBalance = this._arweave.ar.winstonToAr(wnstBalance);
-    console.log("Ar balance is : " + arBalance);
+    console.log("Ar balance is : ", arBalance);
 
     return arBalance;
   }
