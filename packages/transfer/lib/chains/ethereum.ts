@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import Wallet from "ethereumjs-wallet";
 
-export class EthereumChain {
+export default class EthereumChain {
   _wallet: Wallet;
   _web3: Web3;
   pubKey: string;

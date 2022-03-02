@@ -1,6 +1,6 @@
 import Arweave from "arweave";
 
-export class ArweaveChain {
+export default class ArweaveChain {
   _arweave: Arweave;
   _key: any;
   _address: string;

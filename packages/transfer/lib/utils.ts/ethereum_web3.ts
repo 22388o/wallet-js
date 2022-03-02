@@ -2,7 +2,7 @@ import Web3 from "web3";
 import * as bip39 from "bip39";
 import { hdkey } from "ethereumjs-wallet";
 
-export class EthereumWeb3 {
+export default class EthereumWeb3 {
   _mnemonic: string;
   constructor(mnemonic: string) {
     this._mnemonic = mnemonic;

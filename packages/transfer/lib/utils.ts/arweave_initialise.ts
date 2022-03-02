@@ -1,7 +1,7 @@
 import Arweave from "arweave";
 import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
 
-export class ArweaveInitialise {
+export default class ArweaveInitialise {
   _mnemonic: string;
   // Testnet
   _arweave = Arweave.init({

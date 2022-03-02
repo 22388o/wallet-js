@@ -3,7 +3,7 @@ import { Keyring } from "@polkadot/keyring";
 import { KeyringPair } from "@polkadot/keyring/types";
 import "@polkadot/api-augment";
 
-export class PolkadotChain {
+export default class PolkadotChain {
   _mnemonic: string;
   _account: KeyringPair;
   _api: ApiPromise;

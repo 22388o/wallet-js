@@ -1,6 +1,6 @@
 import * as web3 from "@solana/web3.js";
 
-export class SolanaChain {
+export default class SolanaChain {
   _wallet: web3.Keypair;
   _connection: web3.Connection;
   _airdropSignature: string;

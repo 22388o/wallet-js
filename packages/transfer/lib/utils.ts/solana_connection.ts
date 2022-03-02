@@ -1,6 +1,6 @@
 import * as web3 from "@solana/web3.js";
 
-export class SolanaConnection {
+export default class SolanaConnection {
   _wallet: web3.Keypair;
   constructor(wallet: web3.Keypair) {
     this._wallet = wallet;

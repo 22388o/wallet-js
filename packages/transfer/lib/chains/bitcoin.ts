@@ -2,7 +2,7 @@ import { Client } from "@xchainjs/xchain-bitcoin";
 import { AssetBTC, baseAmount } from "@xchainjs/xchain-util";
 import { BigNumber } from "bignumber.js";
 
-export class BitcoinChain {
+export default class BitcoinChain {
   _mnemonic: string;
   _client: Client;
   constructor(mnemonic: string) {

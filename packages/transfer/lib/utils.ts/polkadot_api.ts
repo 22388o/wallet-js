@@ -1,6 +1,6 @@
 import { ApiPromise, WsProvider } from "@polkadot/api";
 
-export class PolkadotApi {
+export default class PolkadotApi {
   _endpointUrl: string;
   constructor(endpointUrl: string) {
     this._endpointUrl = endpointUrl;

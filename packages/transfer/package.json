@@ -9,13 +9,16 @@
   "author": "yerramreddyuday <uday.prasad@dojima.network>",
   "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
   "license": "ISC",
-  "main": "lib/index.ts",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/lib/index.d.ts",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "dist": "dist",
+    "src": "lib"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -29,5 +32,18 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "arweave": "^1.10.23",
+    "@xchainjs/xchain-bitcoin": "^0.18.0-alpha.2",
+    "@xchainjs/xchain-util": "^0.6.0",
+    "web3": "^1.7.0",
+    "ethereumjs-wallet": "^1.0.2",
+    "@polkadot/api": "^7.10.1",
+    "@polkadot/keyring": "^8.4.1",
+    "@polkadot/api-augment": "^7.10.1",
+    "@solana/web3.js": "^1.35.1",
+    "arweave-mnemonic-keys": "^0.0.9",
+    "bip39": "^3.0.4"
   }
 }
