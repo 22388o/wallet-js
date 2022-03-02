@@ -733,6 +733,11 @@
   resolved "https://registry.yarnpkg.com/@xchainjs/xchain-bitcoin/-/xchain-bitcoin-0.18.0-alpha.2.tgz#3b7eca00e63a7b1f2a430c93862baf5355fa6917"
   integrity sha512-anX0cZNaxVWt6opG2HhdiOrLaeIrlUciq3K7eyGbA4OqiyeexpWIXCNGGsMcNeplQgzkyTCBV4KfMtQXPNF8+A==
 
+"@xchainjs/xchain-client@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@xchainjs/xchain-client/-/xchain-client-0.11.1.tgz#b2017289f355de86b788987f863e6ef62c12fdc4"
+  integrity sha512-5e3gXSHVa3dmP8C7UMxx7QqGWHe1elEol7MbM4O5Z8f+cvDCEy8EE/ztDLiOmEQcncN3zuS+22ImaCpJLyaMsQ==
+
 "@xchainjs/xchain-util@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@xchainjs/xchain-util/-/xchain-util-0.6.0.tgz#d44271d3b803cef9b2f52d157e69544930e09072"

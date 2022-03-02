@@ -44,6 +44,8 @@
     "@polkadot/api-augment": "^7.10.1",
     "@solana/web3.js": "^1.35.1",
     "arweave-mnemonic-keys": "^0.0.9",
-    "bip39": "^3.0.4"
+    "bip39": "^3.0.4",
+    "@xchainjs/xchain-client": "^0.11.1",
+    "@xchainjs/xchain-crypto": "^0.2.6"
   }
 }
