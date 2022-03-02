@@ -11,11 +11,6 @@ export class PolkadotApi {
     return wsProvider;
   }
 
-  apiPromise() {
-    const apiProvider = new ApiPromise({ provider: this.wsProvider() });
-    return apiProvider;
-  }
-
   async init() {
     const api = new ApiPromise({ provider: this.wsProvider() });
     await api.isReady;

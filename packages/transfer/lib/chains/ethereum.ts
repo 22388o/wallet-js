@@ -15,10 +15,10 @@ export class EthereumChain {
 
   async getBalance() {
     const gweiBalance = await this._web3.eth.getBalance(this.pubKey);
-    console.log("Balance in gwei is : ", gweiBalance); // Results balance in gwei, 1 eth = 10^9 gwei(1,000,000,000)
+    // console.log("Balance in gwei is : ", gweiBalance); // Results balance in gwei, 1 eth = 10^9 gwei(1,000,000,000)
 
     const ethBalance = this._web3.utils.fromWei(gweiBalance);
-    console.log("Balance in Eth is : ", ethBalance); // Results balance in gwei, 1 eth = 10^9 gwei(1,000,000,000)
+    // console.log("Balance in Eth is : ", ethBalance); // Results balance in gwei, 1 eth = 10^9 gwei(1,000,000,000)
 
     return ethBalance;
   }
@@ -33,12 +33,12 @@ export class EthereumChain {
       },
       this.pvtKey
     );
-    console.log("Transaction : ", transaction);
+    // console.log("Transaction : ", transaction);
 
     const transactionResult = await this._web3.eth.sendSignedTransaction(
       transaction.rawTransaction as string
     );
-    console.log("Transaction details : ", transactionResult);
+    // console.log("Transaction details : ", transactionResult);
 
     return {
       transaction,

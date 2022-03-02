@@ -42,8 +42,8 @@ export class SolanaChain {
       transaction,
       [this._wallet]
     );
-    console.log("Transaction details: ", transaction);
-    console.log("Transaction hash : ", signature);
+    // console.log("Transaction details: ", transaction);
+    // console.log("Transaction hash : ", signature);
 
     return {
       signature,

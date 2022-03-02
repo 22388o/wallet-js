@@ -26,7 +26,7 @@ export class PolkadotChain {
       await this._api.derive.balances.all(this._account.address)
     ).availableBalance.toNumber();
     balance = balance / Math.pow(10, 12); // Balance is retrieved as >12 number so converted to original WSD tokens
-    console.log(balance);
+    // console.log('Balance : ', balance);
     return balance;
   }
 
@@ -39,7 +39,7 @@ export class PolkadotChain {
     const { nonce: nonce } = await this._api.query.system.account(
       this._account.address
     );
-    console.log("Nonce : ", nonce);
+    // console.log("Nonce : ", nonce);
 
     // Create transaction
     const transferDetails = this._api.tx.balances.transfer(toAddress, amount); // randomAmount is just for testing. Use 'amount' for mainnet
@@ -73,7 +73,7 @@ export class PolkadotChain {
 
     try {
       const transactionDetails = await transferDetails.send();
-      console.log("Transaction details : ", transactionDetails);
+      // console.log("Transaction details : ", transactionDetails);
       return transactionDetails;
     } catch (error) {
       console.log("Error : ", error);
