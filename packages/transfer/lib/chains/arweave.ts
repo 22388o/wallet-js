@@ -17,13 +17,6 @@ export default class ArweaveChain extends ArweaveInitialise {
     const pubAddress = await arweave.wallets.jwkToAddress(pvtKey);
     // console.log('Pub Address is : ' + pubAddress);
 
-    // testnet tokens in winston
-    const test_ar_amount = 1000000000000;
-
-    // Mint balance in Arlocal for testing
-    await arweave.api.get(`/mint/${pubAddress}/${test_ar_amount}`);
-    await arweave.api.get("/mine");
-
     // Get balance
     let wnstBalance = await arweave.wallets.getBalance(pubAddress);
     // console.log("Winston balance is : ", wnstBalance);
