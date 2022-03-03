@@ -1,20 +1,17 @@
+import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 import { Client } from "@xchainjs/xchain-bitcoin";
 import { AssetBTC, baseAmount } from "@xchainjs/xchain-util";
 import { BigNumber } from "bignumber.js";
+import BitcoinClient from "lib/utils.ts/bitcoin_client";
 
-export default class BitcoinChain {
-  _mnemonic: string;
-  _client: Client;
-  constructor(mnemonic: string) {
-    this._mnemonic = mnemonic;
-    this._client = new Client({ phrase: this._mnemonic });
+export default class BitcoinChain extends BitcoinClient {
+  constructor(mnemonic: string, network: NetworkType) {
+    super(mnemonic, network);
   }
 
   // Retrieve balance of the user
-  async getBalance() {
-    const balanceObject = await this._client.getBalance(
-      this._client.getAddress()
-    );
+  async getBalance(client: Client) {
+    const balanceObject = await client.getBalance(client.getAddress());
     const balance =
       balanceObject[0].amount.amount().toNumber() /
       Math.pow(10, balanceObject[0].amount.decimal);
@@ -22,7 +19,11 @@ export default class BitcoinChain {
   }
 
   // Transfer tokens to the receiver
-  async createTransactionAndSend(toAddress: string, amount: number) {
+  async createTransactionAndSend(
+    toAddress: string,
+    amount: number,
+    client: Client
+  ) {
     // Convert amount to BigNumber
     const toAmount = new BigNumber(amount * Math.pow(10, 8));
     // console.log('To amount : ', toAmount.toNumber().toFixed(2));
@@ -32,7 +33,7 @@ export default class BitcoinChain {
     // console.log('Base amount : ', bsAmount.amount());
 
     // Transfer amount to recipient
-    const transactionHash = await this._client.transfer({
+    const transactionHash = await client.transfer({
       walletIndex: 0,
       asset: AssetBTC,
       recipient: toAddress,
