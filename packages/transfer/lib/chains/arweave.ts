@@ -1,57 +1,68 @@
 import Arweave from "arweave";
+import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
+import { ArweaveInitialise } from "lib";
+import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 
-export default class ArweaveChain {
-  _arweave: Arweave;
-  _key: any;
-  _address: string;
+export default class ArweaveChain extends ArweaveInitialise {
+  _mnemonic: string;
 
-  constructor(arweave: Arweave, pvtKey: any, pubKey: string) {
-    this._arweave = arweave;
-    this._key = pvtKey;
-    this._address = pubKey;
+  constructor(mnemonic: string, network: NetworkType) {
+    super(mnemonic, network);
+    this._mnemonic = mnemonic;
   }
 
-  async getBalance() {
+  async getBalance(arweave: Arweave) {
+    const pvtKey = await getKeyFromMnemonic(this._mnemonic);
+    // console.log('Pvt key is : ' + pvtKey);
+    const pubAddress = await arweave.wallets.jwkToAddress(pvtKey);
+    // console.log('Pub Address is : ' + pubAddress);
+
     // testnet tokens in winston
     const test_ar_amount = 1000000000000;
 
     // Mint balance in Arlocal for testing
-    await this._arweave.api.get(`/mint/${this._address}/${test_ar_amount}`);
-    await this._arweave.api.get("/mine");
+    await arweave.api.get(`/mint/${pubAddress}/${test_ar_amount}`);
+    await arweave.api.get("/mine");
 
     // Get balance
-    let wnstBalance = await this._arweave.wallets.getBalance(this._address);
+    let wnstBalance = await arweave.wallets.getBalance(pubAddress);
     // console.log("Winston balance is : ", wnstBalance);
 
     // Convert balance from Winston to Ar. (1 Ar = 10^12)
-    const arBalance = this._arweave.ar.winstonToAr(wnstBalance);
+    const arBalance = arweave.ar.winstonToAr(wnstBalance);
     // console.log("Ar balance is : ", arBalance);
 
     return arBalance;
   }
 
-  async createTransactionAndSend(toAddress: string, amount: number) {
+  async createTransactionAndSend(
+    toAddress: string,
+    amount: number,
+    arweave: Arweave
+  ) {
+    const pvtKey = await getKeyFromMnemonic(this._mnemonic);
+    // const pubAddress = await this._arweave.wallets.jwkToAddress(pvtKey);
+    // console.log('Pub Address is : ' + pubAddress);
+
     // Create transaction
-    const transaction = await this._arweave.createTransaction(
+    const transaction = await arweave.createTransaction(
       {
         target: toAddress, // Receiver address
-        quantity: this._arweave.ar.arToWinston(amount.toString()), // Amount to transfer in Ar
+        quantity: arweave.ar.arToWinston(amount.toString()), // Amount to transfer in Ar
       },
-      this._key
+      pvtKey
     );
 
     // Sign transaction and retreive status
-    await this._arweave.transactions.sign(transaction, this._key);
-    const status = await this._arweave.transactions.post(transaction);
-    await this._arweave.api.get("/mine");
+    await arweave.transactions.sign(transaction, pvtKey);
+    const status = await arweave.transactions.post(transaction);
+    await arweave.api.get("/mine");
     // console.log("transfer status", status);
 
     if (status.status == 200) {
       // console.log("Transaction Hash / Id is : " + transaction.id);
       // Get status data using transaction hash / id
-      const statusData = await this._arweave.transactions.getStatus(
-        transaction.id
-      );
+      const statusData = await arweave.transactions.getStatus(transaction.id);
 
       // console.log(JSON.stringify(statusData));
 

@@ -1,42 +1,30 @@
 import Arweave from "arweave";
-import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
+import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 
 export default class ArweaveInitialise {
   _mnemonic: string;
-  // Testnet
-  _arweave = Arweave.init({
-    host: "localhost",
-    port: "1984",
-    protocol: "http",
-    timeout: 100000,
-  });
-  // Mainnet
-  // arweave = Arweave.init({
-  //     host: "htts://arweave.net/",
-  //     protocol: "https",
-  //     timeout: 100000,
-  // });
+  _arweave: Arweave;
 
-  constructor(mnemonic: string) {
+  constructor(mnemonic: string, network: NetworkType) {
     this._mnemonic = mnemonic;
+    // Mainnet
+    this._arweave = Arweave.init({
+      host: "htts://arweave.net/",
+      protocol: "https",
+      timeout: 100000,
+    });
+    if (network === "testnet") {
+      // Testnet
+      this._arweave = Arweave.init({
+        host: "localhost",
+        port: "1984",
+        protocol: "http",
+        timeout: 100000,
+      });
+    }
   }
-
   async init() {
-    const privateKeyJson = await getKeyFromMnemonic(this._mnemonic);
-
-    // for(var key in keyPair) {
-    //     console.log(`${key} : ${keyPair[key]}`);
-    // }
-    // console.log(JSON.stringify(privateKeyJson));
-
-    const publicAddress = await this._arweave.wallets.jwkToAddress(
-      privateKeyJson
-    );
     const arweave = this._arweave;
-    return {
-      arweave,
-      privateKeyJson,
-      publicAddress,
-    };
+    return arweave;
   }
 }
