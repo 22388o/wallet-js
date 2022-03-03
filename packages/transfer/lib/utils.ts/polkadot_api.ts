@@ -1,9 +1,15 @@
 import { ApiPromise, WsProvider } from "@polkadot/api";
+import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 
 export default class PolkadotApi {
   _endpointUrl: string;
-  constructor(endpointUrl: string) {
-    this._endpointUrl = endpointUrl;
+  constructor(network: NetworkType) {
+    this._endpointUrl = "wss://rpc.polkadot.io";
+    if (network === "testnet") {
+      this._endpointUrl = "wss://westend-rpc.polkadot.io";
+    } else if (network === "mainnet") {
+      this._endpointUrl = "wss://rpc.polkadot.io";
+    }
   }
 
   wsProvider() {
