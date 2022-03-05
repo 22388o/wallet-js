@@ -1,0 +1,4 @@
+{
+  //https://github.com/polkadot-js/api/issues/4181
+  "plugins": ["@babel/plugin-proposal-private-methods"]
+}

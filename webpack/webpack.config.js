@@ -3,12 +3,11 @@ const cwd = process.cwd();
 const pkg = require(path.join(cwd, "package.json"));
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const nodeExternals = require("webpack-node-externals");
-const ShebangPlugin = require("webpack-shebang-plugin");
 
 const isProdEnv = process.env.NODE_ENV === "production";
 const isWatchEnv = process.env.WEBPACK_WATCH === "true";
 
-const plugins = [new ShebangPlugin()];
+const plugins = [];
 
 if (isProdEnv) {
   if (process.env.BUILD_PKG_STATS === "true") {
@@ -47,7 +46,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: ["ts-loader"],
         exclude: /node_modules/,
       },
     ],
