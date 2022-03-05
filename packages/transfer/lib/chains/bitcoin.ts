@@ -2,7 +2,7 @@ import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 import { Client } from "@xchainjs/xchain-bitcoin";
 import { AssetBTC, baseAmount } from "@xchainjs/xchain-util";
 import { BigNumber } from "bignumber.js";
-import BitcoinClient from "lib/utils.ts/bitcoin_client";
+import BitcoinClient from "../utils/bitcoin_client";
 
 export default class BitcoinChain extends BitcoinClient {
   constructor(mnemonic: string, network: NetworkType) {

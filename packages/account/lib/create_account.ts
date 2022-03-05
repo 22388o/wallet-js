@@ -2,8 +2,8 @@ import * as bip39 from "bip39";
 import { Keypair } from "@solana/web3.js";
 import Arweave from "arweave";
 import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
-// import { Keyring } from "@polkadot/api";
-// import { mnemonicValidate } from "@polkadot/util-crypto";
+import { Keyring } from "@polkadot/api";
+import { mnemonicValidate } from "@polkadot/util-crypto";
 // import BIP32Factory from "bip32";
 // import { payments, networks } from "bitcoinjs-lib";
 // import * as ecc from "tiny-secp256k1";
@@ -28,9 +28,6 @@ export default class CreateAccount {
 
   async getArweave(): Promise<string> {
     const keyPair = await getKeyFromMnemonic(this._mnemonic);
-    for (const key in keyPair) {
-      console.log(`${key} : ${keyPair[key]}`);
-    }
     const address = await this.arweave.wallets.jwkToAddress(keyPair);
     return address;
   }
@@ -73,32 +70,31 @@ export default class CreateAccount {
     return address;
   }
 
-  // getPolkadot() {
-  //   const keyring = new Keyring(); // default type "ed25519"
-  //   // For specific type of keyring
-  //   // const keyring = new Keyring({ type: "sr25519" });
+  getPolkadot() {
+    const keyring = new Keyring(); // default type "ed25519"
+    // For specific type of keyring
+    // const keyring = new Keyring({ type: "sr25519" });
 
-  //   // Create mnemonic string
-  //   // const mnemonic = mnemonicGenerate();
+    // Create mnemonic string
+    // const mnemonic = mnemonicGenerate();
 
-  //   const isValidMnemonic = mnemonicValidate(this._mnemonic);
-  //   if (!isValidMnemonic) {
-  //     throw Error("Invalid Mnemonic");
-  //   }
+    const isValidMnemonic = mnemonicValidate(this._mnemonic);
+    if (!isValidMnemonic) {
+      throw Error("Invalid Mnemonic");
+    }
 
-  //   // Add an account derived from the mnemonic
-  //   const account = keyring.addFromUri(this._mnemonic);
-  //   const address = account.address;
-  //   // const jsonWallet = JSON.stringify(keyring.toJson(address), null, 2);
-  //   return address;
-  // }
+    // Add an account derived from the mnemonic
+    const account = keyring.addFromUri(this._mnemonic);
+    const address = account.address;
+    // const jsonWallet = JSON.stringify(keyring.toJson(address), null, 2);
+    return address;
+  }
 
   getSolana() {
     const seed = bip39.mnemonicToSeedSync(this._mnemonic).slice(0, 32);
     const solanaAccount = Keypair.fromSeed(seed);
     const publicKey = solanaAccount.publicKey.toString();
-    const privateKey = Buffer.from(solanaAccount.secretKey).toString("base64");
-    console.log([publicKey, privateKey]);
+    // const privateKey = Buffer.from(solanaAccount.secretKey).toString("base64");
     return publicKey;
   }
 

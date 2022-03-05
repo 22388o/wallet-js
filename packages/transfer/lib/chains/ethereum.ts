@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import * as ethers from "ethers";
 import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
-import { EthereumWeb3 } from "lib";
+import EthereumWeb3 from "../utils/ethereum_web3";
 
 export default class EthereumChain extends EthereumWeb3 {
   _pubKey: string;
