@@ -40,7 +40,7 @@ export default class ArweaveInitialise {
     await arweave.api.get(`/mint/${pubAddress}/${test_ar_amount}`);
     await arweave.api.get("/mine");
   }
-  async init() {
+  init() {
     const arweave = this._arweave;
     return arweave;
   }

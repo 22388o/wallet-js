@@ -34,6 +34,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@dojima-wallet/connection": "^0.0.1-alpha.3",
     "@dojima-wallet/types": "^0.0.1-alpha.3",
     "@polkadot/api": "^7.10.1",
     "@polkadot/api-augment": "^7.10.1",

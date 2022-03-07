@@ -2,7 +2,7 @@ import { ApiPromise } from "@polkadot/api";
 import { Keyring } from "@polkadot/keyring";
 import { KeyringPair } from "@polkadot/keyring/types";
 import "@polkadot/api-augment";
-import PolkadotApi from "lib/utils/polkadot_api";
+import { PolkadotApi } from "@dojima-wallet/connection";
 import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
 
 export default class PolkadotChain extends PolkadotApi {

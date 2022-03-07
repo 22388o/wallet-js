@@ -1,7 +1,7 @@
 import Arweave from "arweave";
 import { getKeyFromMnemonic } from "arweave-mnemonic-keys";
-import ArweaveInitialise from "../utils/arweave_initialise";
 import { NetworkType } from "@dojima-wallet/types/dist/lib/network";
+import { ArweaveInitialise } from "@dojima-wallet/connection";
 
 export default class ArweaveChain extends ArweaveInitialise {
   _mnemonic: string;

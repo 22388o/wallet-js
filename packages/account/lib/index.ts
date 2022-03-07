@@ -1,2 +1,13 @@
-import CreateAccount from './create_account';
-export default CreateAccount;
+import ArweaveAccount from "./arweaveAccount";
+import BitcoinAccount from "./bitcoinAccount";
+import EthereumAccount from "./ethereumAccount";
+import PolkadotAccount from "./polkadotAccount";
+import SolanaAccount from "./solanaAccount";
+
+export {
+  ArweaveAccount,
+  BitcoinAccount,
+  EthereumAccount,
+  PolkadotAccount,
+  SolanaAccount,
+};
