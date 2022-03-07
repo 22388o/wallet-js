@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@dojima-wallet/types@^0.0.1-alpha.1":
-  version "0.0.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/types/-/types-0.0.1-alpha.1.tgz#e6f2cc7a7d762552a7eb5dca245206e27ebc095f"
-  integrity sha512-BKYDaM0AGB8/V6ypq8XtNVQczaJpvulozuezeW/K3W8VsE9PAltN4x/h8EVEP4a3q3ykhMErnG8hLFsFv1Btrw==
+"@dojima-wallet/types@^0.0.1-alpha.3":
+  version "0.0.1-alpha.3"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/types/-/types-0.0.1-alpha.3.tgz#e6cc3fc4c7713ce70d2e6f596132c95c9c27ee71"
+  integrity sha512-x62EBl5TtY3HHHNc2pF9rQ5pYYp45FYQtmNnDx+3E1GUv6G+WkqO329OcI/kImcbtD8S14axxcctTWssbsw8lA==
 
 "@ethersproject/bytes@^5.5.0":
   version "5.5.0"

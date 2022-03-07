@@ -1,1 +1,3 @@
-export * as Network from './network';
+import { NetworkType } from "./network";
+
+export { NetworkType };
