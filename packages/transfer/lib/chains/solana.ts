@@ -1,7 +1,7 @@
+import { SolanaAccount } from "@dojima-wallet/account";
+import { SolanaConnection } from "@dojima-wallet/connection";
 import { NetworkType } from "@dojima-wallet/types";
 import * as web3 from "@solana/web3.js";
-import { SolanaConnection } from "@dojima-wallet/connection";
-import SolanaAccount from "../accounts/solana_account";
 
 export class SolanaChain extends SolanaConnection {
   _mnemonic: string;

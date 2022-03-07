@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/types",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.4",
   "description": "global types for wallet packages",
   "keywords": [
     "types",
@@ -25,7 +25,7 @@
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "build": "webpack --config ../../webpack/webpack.config.js"
+    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
