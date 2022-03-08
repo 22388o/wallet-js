@@ -12,7 +12,7 @@ export default class ArweaveInitialise {
     this._network = network;
     // Mainnet
     this._arweave = Arweave.init({
-      host: "htts://arweave.net/",
+      host: "arweave.net",
       protocol: "https",
       timeout: 100000,
     });

@@ -1,13 +1,6 @@
 import ArweaveAccount from "./arweaveAccount";
 import BitcoinAccount from "./bitcoinAccount";
 import EthereumAccount from "./ethereumAccount";
-import PolkadotAccount from "./polkadotAccount";
 import SolanaAccount from "./solanaAccount";
 
-export {
-  ArweaveAccount,
-  BitcoinAccount,
-  EthereumAccount,
-  PolkadotAccount,
-  SolanaAccount,
-};
+export { ArweaveAccount, BitcoinAccount, EthereumAccount, SolanaAccount };

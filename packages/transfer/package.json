@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/transfer",
-  "version": "0.0.1-aplha.2",
+  "version": "0.0.1-aplha.3",
   "description": "Transfer assets from account to account",
   "keywords": [
     "transfer",
@@ -34,12 +34,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@dojima-wallet/account": "^0.0.1-alpha.3",
-    "@dojima-wallet/connection": "^0.0.1-alpha.3",
-    "@dojima-wallet/types": "^0.0.1-alpha.3",
-    "@polkadot/api": "^7.10.1",
-    "@polkadot/api-augment": "^7.10.1",
-    "@polkadot/keyring": "^8.4.1",
+    "@dojima-wallet/account": "^0.0.1-alpha.6",
+    "@dojima-wallet/connection": "^0.0.1-alpha.7",
+    "@dojima-wallet/types": "^0.0.1-alpha.4",
     "@solana/web3.js": "^1.35.1",
     "@xchainjs/xchain-bitcoin": "^0.18.0-alpha.2",
     "@xchainjs/xchain-client": "^0.11.1",

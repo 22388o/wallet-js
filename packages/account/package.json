@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/account",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "description": "creates accounts for all layer1, layer2 supported chains.",
   "keywords": [
     "account",
@@ -45,6 +45,6 @@
     "ed25519-hd-key": "^1.2.0",
     "ethereumjs-wallet": "^1.0.2",
     "tiny-secp256k1": "^2.2.0",
-    "@dojima-wallet/connection": "^0.0.1-alpha.5"
+    "@dojima-wallet/connection": "^0.0.1-alpha.7"
   }
 }
