@@ -1,16 +1,18 @@
 {
-  "name": "@dojima-wallet/account",
-  "version": "0.0.1-alpha.6",
-  "description": "creates accounts for all layer1, layer2 supported chains.",
+  "name": "@dojima-wallet/connection",
+  "version": "0.0.1-alpha.7",
+  "description": "Initialise and connection for layer 1&2 blockchain",
   "keywords": [
-    "account",
-    "blockchain",
-    "dojima"
+    "connection",
+    "api",
+    "initialise",
+    "client",
+    "web3"
   ],
   "module": "dist/index.js",
   "main": "dist/index.js",
   "types": "dist/lib/index.d.ts",
-  "author": "bhaagiKenpachi <bhagath.reddy@dojima.network>",
+  "author": "yerramreddyuday <uday.prasad@dojima.network>",
   "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
   "license": "MIT",
   "directories": {
@@ -36,15 +38,11 @@
   },
   "dependencies": {
     "@dojima-wallet/types": "^0.0.1-alpha.4",
-    "@solana/web3.js": "^1.34.0",
+    "@solana/web3.js": "^1.36.0",
+    "@xchainjs/xchain-bitcoin": "^0.18.0-alpha.2",
+    "@xchainjs/xchain-client": "^0.11.1",
     "arweave": "^1.10.23",
     "arweave-mnemonic-keys": "^0.0.9",
-    "bip32": "^2.0.5",
-    "bip39": "^3.0.4",
-    "bitcoinjs-lib": "^6.0.1",
-    "ed25519-hd-key": "^1.2.0",
-    "ethereumjs-wallet": "^1.0.2",
-    "tiny-secp256k1": "^2.2.0",
-    "@dojima-wallet/connection": "^0.0.1-alpha.7"
+    "web3": "^1.7.1"
   }
 }
