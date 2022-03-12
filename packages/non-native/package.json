@@ -1,0 +1,42 @@
+{
+  "name": "@dojima-wallet/non-native",
+  "version": "0.0.1-alphlha.1",
+  "description": "package for non-native tokens functionality",
+  "keywords": [
+    "balance",
+    "send",
+    "tokens",
+    "transaction"
+  ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/lib/index.d.js",
+  "author": "yerramreddyuday <uday.prasad@dojima.network>",
+  "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
+  "license": "ISC",
+  "directories": {
+    "dist": "dist",
+    "src": "lib"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojimanetwork/wallet-js.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ node_modules/ && yarn && webpack --config ../../webpack/webpack.config.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dojimanetwork/wallet-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "web3": "1.7.1",
+    "web3-utils": "1.7.1"
+  }
+}
