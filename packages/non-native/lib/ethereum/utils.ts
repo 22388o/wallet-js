@@ -26,7 +26,6 @@ export type tokensNames =
   | "CRONOS_COIN";
 
 export const minABI = [
-  //  balanceOf
   {
     constant: true,
 
