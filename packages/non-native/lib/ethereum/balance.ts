@@ -1,6 +1,6 @@
 import Web3 from "web3";
 import { AbiItem } from "web3-utils";
-import { contractAddress, tokensNames, minABI } from "./utils";
+import { contractAddress, tokens, minABI } from "./utils";
 export default class Balance {
   _provider: string;
   _web3Client: Web3;
@@ -9,7 +9,7 @@ export default class Balance {
     this._web3Client = new Web3(this._provider);
   }
 
-  async getBalance(token: tokensNames, walletAddress: string) {
+  async getBalance(token: tokens, walletAddress: string) {
     const contract = new this._web3Client.eth.Contract(
       minABI as AbiItem[],
       contractAddress[token]

@@ -12,7 +12,7 @@ export const contractAddress = {
   CRONOS_COIN: "0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b",
 };
 
-export type tokensNames =
+export type tokens =
   | "TETHER"
   | "BNB"
   | "USDC"
