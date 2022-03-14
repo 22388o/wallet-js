@@ -24,11 +24,31 @@ export class SolanaChain extends SolanaConnection {
     return balance;
   }
 
-  async createTransactionAndSend(
-    toAddress: string,
-    amount: number,
-    connection: web3.Connection
-  ) {
+  // Get recent block hash for calculating gas fee
+  async getRecentBlockHash(connection: web3.Connection) {
+    const blockHash = await connection.getRecentBlockhash();
+    // console.log("Block Hash is : ", blockHash);
+    return blockHash;
+  }
+
+  // Calculate Gas fee based in recent block hash
+  async getFees(connection: web3.Connection) {
+    const { feeCalculator } = await this.getRecentBlockHash(connection);
+    return {
+      slow: {
+        fee: feeCalculator.lamportsPerSignature,
+      },
+      average: {
+        fee: feeCalculator.lamportsPerSignature,
+      },
+      fast: {
+        fee: feeCalculator.lamportsPerSignature,
+      },
+    };
+  }
+
+  // Create transaction details based on user input
+  async createTransaction(toAddress: string, amount: number) {
     // Get account details
     const account = await new SolanaAccount(this._mnemonic).solAcc();
     const pubKey = new web3.PublicKey(account[0].publicKey.toString());
@@ -40,7 +60,7 @@ export class SolanaChain extends SolanaConnection {
     // console.log('To Amount : ' , toAmount);
 
     // Add transaction for the required amount
-    let transaction = new web3.Transaction().add(
+    let rawTx = new web3.Transaction().add(
       web3.SystemProgram.transfer({
         fromPubkey: pubKey,
         toPubkey: to,
@@ -48,18 +68,22 @@ export class SolanaChain extends SolanaConnection {
       })
     );
 
+    return rawTx;
+  }
+
+  async signAndSend(rawTx: web3.Transaction, connection: web3.Connection) {
+    // Get account details
+    const account = await new SolanaAccount(this._mnemonic).solAcc();
+
     // Sign the transaction
-    let signature = await web3.sendAndConfirmTransaction(
-      connection,
-      transaction,
-      [account[0]]
-    );
+    let signature = await web3.sendAndConfirmTransaction(connection, rawTx, [
+      account[0],
+    ]);
     // console.log('Transaction details: ', JSON.stringify(transaction));
     // console.log('Transaction hash : ', signature);
 
     return {
       signature,
-      transaction,
     };
   }
 }
