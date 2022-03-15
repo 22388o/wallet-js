@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/transfer",
-  "version": "0.0.1-aplha.3",
+  "version": "0.0.1-aplha.5",
   "description": "Transfer assets from account to account",
   "keywords": [
     "transfer",
