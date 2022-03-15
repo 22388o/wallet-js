@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/non-native",
-  "version": "0.0.1-alphlha.1",
+  "version": "0.0.1-alphlha.2",
   "description": "package for non-native tokens functionality",
   "keywords": [
     "balance",
@@ -10,7 +10,7 @@
   ],
   "module": "dist/index.js",
   "main": "dist/index.js",
-  "types": "dist/lib/index.d.js",
+  "types": "dist/lib/index.d.ts",
   "author": "yerramreddyuday <uday.prasad@dojima.network>",
   "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
   "license": "ISC",
