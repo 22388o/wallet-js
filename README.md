@@ -28,3 +28,7 @@ This package is used for creating accounts to layer1 blockchains like arweave, s
 ## Transfer package
 
 This package is used for quering balance, transfer tokens to blockchains.
+
+## Non-native package
+
+This package is used for querying non-native token functionalities for multiple blockchains like ethereum - USDT, USDC, BNB, UNI; Arweave - ArDrive, Verto.
