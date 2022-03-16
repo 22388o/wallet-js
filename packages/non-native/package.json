@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/non-native",
-  "version": "0.0.1-alphlha.2",
+  "version": "0.0.1-alphlha.3",
   "description": "package for non-native tokens functionality",
   "keywords": [
     "balance",
@@ -27,7 +27,7 @@
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "build": "rm -rf dist/ node_modules/ && yarn && webpack --config ../../webpack/webpack.config.js"
+    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"

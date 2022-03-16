@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/connection",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.1-alpha.8",
   "description": "Initialise and connection for layer 1&2 blockchain",
   "keywords": [
     "connection",
@@ -28,7 +28,7 @@
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "build": "rm -rf dist/ node_modules/ && yarn && webpack --config ../../webpack/webpack.config.js"
+    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
@@ -41,6 +41,7 @@
     "@solana/web3.js": "^1.36.0",
     "@xchainjs/xchain-bitcoin": "^0.18.0-alpha.2",
     "@xchainjs/xchain-client": "^0.11.1",
+    "@xchainjs/xchain-crypto": "^0.2.6",
     "arweave": "^1.10.23",
     "arweave-mnemonic-keys": "^0.0.9",
     "web3": "^1.7.1"

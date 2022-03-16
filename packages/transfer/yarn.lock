@@ -3,18 +3,18 @@
 
 
 "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5":
-  version "7.17.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
-  integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
+  version "7.17.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.7.tgz#a5f3328dc41ff39d803f311cfe17703418cf9825"
+  integrity sha512-L6rvG9GDxaLgFjg41K+5Yv9OMrU98sWe+Ykmc6FDJW/+vYZMhdOMKkISgzptMaERHvS2Y2lw9MDRm2gHhlQQoA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@dojima-wallet/account@^0.0.1-alpha.6":
-  version "0.0.1-alpha.6"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/account/-/account-0.0.1-alpha.6.tgz#4a2baa1cf384ad0deb9b9910b88cce2ec930025f"
-  integrity sha512-TDGvKcSlnv7CKS1k8SioIVZSKpb0+LYpOz2ltF+1eG0Mrl59rDqHONcgCp0thFNw5xG5SIu8b+heKWuhCOnhYQ==
+"@dojima-wallet/account@^0.0.1-alpha.7":
+  version "0.0.1-alpha.7"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/account/-/account-0.0.1-alpha.7.tgz#e061e21192e7ec2b547ac99c826591b836af228d"
+  integrity sha512-gcZozR+JE5fMyEv0icv7tYNIDCxY6et66R0ki652ZtOssQfMoQgKlNac8JZCYyYVymWtujnS84difDgYFtrCuA==
   dependencies:
-    "@dojima-wallet/connection" "^0.0.1-alpha.6"
+    "@dojima-wallet/connection" "^0.0.1-alpha.8"
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.34.0"
     arweave "^1.10.23"
@@ -26,10 +26,10 @@
     ethereumjs-wallet "^1.0.2"
     tiny-secp256k1 "^2.2.0"
 
-"@dojima-wallet/connection@^0.0.1-alpha.6", "@dojima-wallet/connection@^0.0.1-alpha.7":
-  version "0.0.1-alpha.7"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.7.tgz#43df96210b0266a235c44c8dd56e220210f504ba"
-  integrity sha512-zWRrTyO6Ekm//EMwp7Rsdr86rT+N+atPAdQ1DHUEaV+fibbnjNkT16rkdErtQ7Gcpj4jxReJL87Cfo9luXPwKA==
+"@dojima-wallet/connection@^0.0.1-alpha.8":
+  version "0.0.1-alpha.8"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.8.tgz#0f917c3d6351a7e8de8279a8d52359a78dec6c53"
+  integrity sha512-JIMrbdyLXCtjPaRRbc8lnQwXDVKRU2WiEmKVrCRtexPS6BWnT3LcHvb6t4G7InA0YE5xVin+ULbh9kGznW1P3g==
   dependencies:
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.36.0"
@@ -377,9 +377,9 @@
     "@types/range-parser" "*"
 
 "@types/lodash@^4.14.159":
-  version "4.14.179"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.179.tgz#490ec3288088c91295780237d2497a3aa9dfb5c5"
-  integrity sha512-uwc1x90yCKqGcIOAT6DwOSuxnrAbpkdPsUOZtwrXb4D/6wZs+6qG7QnIawDuZWg0sWpxl+ltIKCaLoMlna678w==
+  version "4.14.180"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.180.tgz#4ab7c9ddfc92ec4a887886483bc14c79fb380670"
+  integrity sha512-XOKXa1KIxtNXgASAnwj7cnttJxS4fksBRywK/9LzRV5YxrF80BXZIGeQSuoESQ/VkUj30Ae0+YcuHc15wJCB2g==
 
 "@types/long@^4.0.1":
   version "4.0.1"
@@ -438,9 +438,9 @@
     "@types/node" "*"
 
 "@xchainjs/xchain-bitcoin@^0.18.0-alpha.2":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@xchainjs/xchain-bitcoin/-/xchain-bitcoin-0.18.0.tgz#0fd7939b390d6c793294c069e0c394ff794cdfae"
-  integrity sha512-3EQ/UlZ81kxVIgbVO68r6bRyNHAQsxawBEE82o3FCFBqTiW/PrAV/G1xzJ5RlYB2qqQL/h1GoZBx1OPc2YEO0w==
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@xchainjs/xchain-bitcoin/-/xchain-bitcoin-0.18.1.tgz#ef04099a6876ae7193938c9f8a97a40d4f2e2f68"
+  integrity sha512-qXxWcASq9yVwms6ilGbBSegdmhIvVCnW/QB/YGmQTNx8yXzXNFguneerFrZpLAoBqegHPxTc3SkAezir6GApBg==
 
 "@xchainjs/xchain-client@^0.11.1":
   version "0.11.1"
@@ -2208,17 +2208,17 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-mime-db@1.51.0:
-  version "1.51.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.51.0.tgz#d9ff62451859b18342d960850dc3cfb77e63fb0c"
-  integrity sha512-5y8A56jg7XVQx2mbv1lu49NR4dokRnhZYTtL+KGfaa27uq4pSTXkwQkFJl4pkRMyNFz/EtYDSkiiEHx3F7UN6g==
+mime-db@1.52.0:
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
+  integrity sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==
 
 mime-types@^2.1.12, mime-types@^2.1.16, mime-types@~2.1.19, mime-types@~2.1.24, mime-types@~2.1.34:
-  version "2.1.34"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.34.tgz#5a712f9ec1503511a945803640fafe09d3793c24"
-  integrity sha512-6cP692WwGIs9XXdOO4++N+7qjqv0rqxxVvJ3VHPh/Sc9mVZcQP+ZGhkKiTvWMQRr2tbHkJP/Yn7Y0npb3ZBs4A==
+  version "2.1.35"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
+  integrity sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==
   dependencies:
-    mime-db "1.51.0"
+    mime-db "1.52.0"
 
 mime@1.6.0:
   version "1.6.0"
@@ -2496,9 +2496,9 @@ parse-asn1@^5.0.0, parse-asn1@^5.1.5:
     safe-buffer "^5.1.1"
 
 parse-headers@^2.0.0:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/parse-headers/-/parse-headers-2.0.4.tgz#9eaf2d02bed2d1eff494331ce3df36d7924760bf"
-  integrity sha512-psZ9iZoCNFLrgRjZ1d8mn0h9WRqJwFxM9q3x7iUjN/YT2OksthDJ5TiPCu2F38kS4zutqfW+YdVVkBZZx3/1aw==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/parse-headers/-/parse-headers-2.0.5.tgz#069793f9356a54008571eb7f9761153e6c770da9"
+  integrity sha512-ft3iAoLOB/MlwbNXgzy43SWGP6sQki2jQvAyBg/zDFAgr9bfNWZIUj42Kw2eJIl8kEi4PbgE6U1Zau/HwI75HA==
 
 parseurl@~1.3.3:
   version "1.3.3"

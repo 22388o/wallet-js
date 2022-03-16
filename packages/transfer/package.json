@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/transfer",
-  "version": "0.0.1-aplha.5",
+  "version": "0.0.1-aplha.6",
   "description": "Transfer assets from account to account",
   "keywords": [
     "transfer",
@@ -25,7 +25,7 @@
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "build": "rm -rf dist/ node_modules/ && yarn && webpack --config ../../webpack/webpack.config.js"
+    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
@@ -34,8 +34,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@dojima-wallet/account": "^0.0.1-alpha.6",
-    "@dojima-wallet/connection": "^0.0.1-alpha.7",
+    "@dojima-wallet/account": "^0.0.1-alpha.7",
+    "@dojima-wallet/connection": "^0.0.1-alpha.8",
     "@dojima-wallet/types": "^0.0.1-alpha.4",
     "@solana/web3.js": "^1.35.1",
     "@xchainjs/xchain-bitcoin": "^0.18.0-alpha.2",
