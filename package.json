@@ -43,6 +43,8 @@
   "scripts": {
     "prettify": "prettier --single-quote --write 'packages/**/*.{tsx,ts,js}'",
     "build:prod": "NODE_ENV=production lerna run build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "yarn:publish": "sh yarn_publish.sh",
+    "yarn_link:packages": "sh yarn_link.sh"
   }
 }

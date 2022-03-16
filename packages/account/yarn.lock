@@ -9,15 +9,16 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@dojima-wallet/connection@^0.0.1-alpha.8":
-  version "0.0.1-alpha.8"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.8.tgz#0f917c3d6351a7e8de8279a8d52359a78dec6c53"
-  integrity sha512-JIMrbdyLXCtjPaRRbc8lnQwXDVKRU2WiEmKVrCRtexPS6BWnT3LcHvb6t4G7InA0YE5xVin+ULbh9kGznW1P3g==
+"@dojima-wallet/connection@^0.0.1-alpha.9":
+  version "0.0.1-alpha.9"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.9.tgz#f07f0f991e5e573f1fa289f925fc873b29db2ab6"
+  integrity sha512-Y4TMxzwXVHJvHpKvCVT0vsbSIRKg5Ikuz3YGWK5dYkeYUYNThP/CSV9pMlRCxHEcrrSWB7ekAgK/3kJRwHfSNQ==
   dependencies:
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.36.0"
     "@xchainjs/xchain-bitcoin" "^0.18.0-alpha.2"
     "@xchainjs/xchain-client" "^0.11.1"
+    "@xchainjs/xchain-crypto" "^0.2.6"
     arweave "^1.10.23"
     arweave-mnemonic-keys "^0.0.9"
     web3 "^1.7.1"
