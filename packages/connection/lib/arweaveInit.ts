@@ -3,8 +3,8 @@ import { NetworkType } from "@dojima-wallet/types";
 
 export default class ArweaveInitialise {
   _mnemonic: string;
-  public _arweave: Arweave;
   _network: NetworkType;
+  public _arweave: Arweave;
 
   constructor(mnemonic: string, network: NetworkType) {
     this._mnemonic = mnemonic;
@@ -17,7 +17,7 @@ export default class ArweaveInitialise {
         protocol: "http",
         timeout: 100000,
       });
-    } else if (this._network === "mainnet") {
+    } else {
       // Mainnet
       this._arweave = Arweave.init({
         host: "arweave.net",
@@ -25,10 +25,5 @@ export default class ArweaveInitialise {
         timeout: 100000,
       });
     }
-  }
-
-  init() {
-    const arweave = this._arweave;
-    return arweave;
   }
 }
