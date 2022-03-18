@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@dojima-wallet/connection@^0.0.1-alpha.9":
-  version "0.0.1-alpha.9"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.9.tgz#f07f0f991e5e573f1fa289f925fc873b29db2ab6"
-  integrity sha512-Y4TMxzwXVHJvHpKvCVT0vsbSIRKg5Ikuz3YGWK5dYkeYUYNThP/CSV9pMlRCxHEcrrSWB7ekAgK/3kJRwHfSNQ==
+"@dojima-wallet/connection@^0.0.1-alpha.10":
+  version "0.0.1-alpha.10"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.10.tgz#a5de0a255cb0cf4f16f88bc814380f3441a247dc"
+  integrity sha512-0uWoAh7fhft7Yw+1Ry3X5niizkmanj0qq6MNV81PHeyFXLdvvJlc16qMcchbOPKClUpMhZSD5Dj6XXCAKw+trw==
   dependencies:
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.36.0"

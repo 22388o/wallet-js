@@ -1,6 +1,6 @@
 {
   "name": "@dojima-wallet/account",
-  "version": "0.0.1-alpha.8",
+  "version": "0.0.1-alpha.9",
   "description": "creates accounts for all layer1, layer2 supported chains.",
   "keywords": [
     "account",
@@ -35,7 +35,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@dojima-wallet/connection": "^0.0.1-alpha.9",
+    "@dojima-wallet/connection": "^0.0.1-alpha.10",
     "@dojima-wallet/types": "^0.0.1-alpha.4",
     "@solana/web3.js": "^1.34.0",
     "@xchainjs/xchain-crypto": "^0.2.6",

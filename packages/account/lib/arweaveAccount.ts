@@ -7,7 +7,7 @@ export default class ArweaveAccount extends ArweaveInitialise {
     super(mnemonic, network);
   }
 
-  async create(): Promise<string> {
+  async getAddress(): Promise<string> {
     const keyPair = await getKeyFromMnemonic(this._mnemonic);
     const address = await this._arweave.wallets.jwkToAddress(keyPair);
     return address;

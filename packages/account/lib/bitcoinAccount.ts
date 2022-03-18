@@ -1,18 +1,13 @@
 import { NetworkType } from "@dojima-wallet/types";
-import { Client } from "@xchainjs/xchain-bitcoin";
+// import { Client } from "@xchainjs/xchain-bitcoin";
 import { BitcoinClient } from "@dojima-wallet/connection";
 
-export default class BitcoinAccount {
-  _mnemonic: string;
-  _network: NetworkType;
-  _client: Client;
+export default class BitcoinAccount extends BitcoinClient {
   constructor(mnemonic: string, network: NetworkType) {
-    this._mnemonic = mnemonic;
-    this._network = network;
-    this._client = new BitcoinClient(this._mnemonic, this._network).init();
+    super(mnemonic, network);
   }
 
-  create(): string {
+  getAddress(): string {
     const address = this._client.getAddress();
     return address;
   }
