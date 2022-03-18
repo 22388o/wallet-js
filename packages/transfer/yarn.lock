@@ -9,12 +9,12 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@dojima-wallet/account@^0.0.1-alpha.8":
-  version "0.0.1-alpha.8"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/account/-/account-0.0.1-alpha.8.tgz#68a65a0ab6d68a548b2024fe896697a8c31bab62"
-  integrity sha512-a2Nav9GIIrnMtI98qkXgOudaskn9tB5iKB4JjelZqjgHbnKlMdvxwUUSOka1f+hjTn/VPcnVNnnXjtRxiDZcgg==
+"@dojima-wallet/account@^0.0.1-alpha.9":
+  version "0.0.1-alpha.9"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/account/-/account-0.0.1-alpha.9.tgz#d43775f1788d35a7c784a378d0cde33d01609810"
+  integrity sha512-u1Dan7cUCEyHl+kVOhH7Oj2wA4ZLCYjpnLm/vcqyyRDbSNBXNewMd1VtxaGlvFJnBIocYkxoMMyJO0Zeh5Zedw==
   dependencies:
-    "@dojima-wallet/connection" "^0.0.1-alpha.9"
+    "@dojima-wallet/connection" "^0.0.1-alpha.10"
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.34.0"
     "@xchainjs/xchain-crypto" "^0.2.6"
@@ -27,10 +27,10 @@
     ethereumjs-wallet "^1.0.2"
     tiny-secp256k1 "^2.2.0"
 
-"@dojima-wallet/connection@^0.0.1-alpha.9":
-  version "0.0.1-alpha.9"
-  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.9.tgz#f07f0f991e5e573f1fa289f925fc873b29db2ab6"
-  integrity sha512-Y4TMxzwXVHJvHpKvCVT0vsbSIRKg5Ikuz3YGWK5dYkeYUYNThP/CSV9pMlRCxHEcrrSWB7ekAgK/3kJRwHfSNQ==
+"@dojima-wallet/connection@^0.0.1-alpha.10":
+  version "0.0.1-alpha.10"
+  resolved "https://registry.yarnpkg.com/@dojima-wallet/connection/-/connection-0.0.1-alpha.10.tgz#a5de0a255cb0cf4f16f88bc814380f3441a247dc"
+  integrity sha512-0uWoAh7fhft7Yw+1Ry3X5niizkmanj0qq6MNV81PHeyFXLdvvJlc16qMcchbOPKClUpMhZSD5Dj6XXCAKw+trw==
   dependencies:
     "@dojima-wallet/types" "^0.0.1-alpha.4"
     "@solana/web3.js" "^1.36.0"
