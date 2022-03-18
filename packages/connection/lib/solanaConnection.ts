@@ -9,10 +9,8 @@ export default class SolanaConnection {
   constructor(mnemonic: string, network: NetworkType) {
     this._mnemonic = mnemonic;
     this._network = network;
-    if (this._network === "devnet") {
+    if (this._network === "devnet" || this._network === "testnet") {
       this._cluster = "devnet";
-    } else if (this._network === "testnet") {
-      this._cluster = "testnet";
     } else {
       this._cluster = "mainnet-beta";
     }
