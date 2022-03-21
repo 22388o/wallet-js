@@ -8,6 +8,7 @@ Below are the list of packages available:
 - @dojima-wallet/connection
 - @dojima-wallet/account
 - @dojima-wallet/transfer
+- @dojima-wallet/non-native
 
 ## Description
 
