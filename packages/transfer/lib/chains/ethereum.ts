@@ -32,13 +32,13 @@ export default class EthereumChain extends EthereumAccount {
     const baseGasFee = await this._web3.eth.getGasPrice();
     return {
       slow: {
-        fee: this.calculateFee(parseFloat(baseGasFee), 1),
+        fee: this.calculateFee(parseFloat(baseGasFee), 1) / Math.pow(10, 18),
       },
       average: {
-        fee: this.calculateFee(parseFloat(baseGasFee), 1.5),
+        fee: this.calculateFee(parseFloat(baseGasFee), 1.5) / Math.pow(10, 18),
       },
       fast: {
-        fee: this.calculateFee(parseFloat(baseGasFee), 2),
+        fee: this.calculateFee(parseFloat(baseGasFee), 2) / Math.pow(10, 18),
       },
     };
   }
@@ -50,7 +50,7 @@ export default class EthereumChain extends EthereumAccount {
       to: toAddress,
       value: this._web3.utils.toWei(amount.toString(), "ether"), // Amount in Eth, 1 eth = 10^9 gwei(1,000,000,000)
       gas: 21000, // Minimum / base gas fee is 21,000
-      gasPrice: feeRate,
+      gasPrice: Math.round(feeRate * Math.pow(10, 18)),
     };
     // console.log('Raw Transaction : ', rawTxDetails);
     return rawTxDetails;

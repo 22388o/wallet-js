@@ -28,13 +28,13 @@ export default class SolanaChain extends SolanaAccount {
     const { feeCalculator } = await this.getRecentBlockHash();
     return {
       slow: {
-        fee: feeCalculator.lamportsPerSignature,
+        fee: feeCalculator.lamportsPerSignature / Math.pow(10, 9),
       },
       average: {
-        fee: feeCalculator.lamportsPerSignature,
+        fee: feeCalculator.lamportsPerSignature / Math.pow(10, 9),
       },
       fast: {
-        fee: feeCalculator.lamportsPerSignature,
+        fee: feeCalculator.lamportsPerSignature / Math.pow(10, 9),
       },
     };
   }
