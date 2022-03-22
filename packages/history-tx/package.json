@@ -1,0 +1,40 @@
+{
+  "name": "@dojima-wallet/history-tx",
+  "version": "0.0.1-alpha.1",
+  "description": "Retrieve transactions history using address and transaction data based on hash",
+  "keywords": [
+    "history",
+    "transactions",
+    "data",
+    "hash",
+    "address"
+  ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/lib/index.d.ts",
+  "author": "yerramreddyuday <uday.prasad@dojima.network>",
+  "homepage": "https://github.com/dojimanetwork/wallet-js#readme",
+  "license": "ISC",
+  "directories": {
+    "dist": "dist",
+    "src": "lib"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojimanetwork/wallet-js.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dojimanetwork/wallet-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {}
+}
