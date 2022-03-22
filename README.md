@@ -9,6 +9,7 @@ Below are the list of packages available:
 - @dojima-wallet/account
 - @dojima-wallet/transfer
 - @dojima-wallet/non-native
+- @dojima-wallet/history-tx
 
 ## Description
 
@@ -33,3 +34,7 @@ This package is used for quering balance, transfer tokens to blockchains.
 ## Non-native package
 
 This package is used for querying non-native token functionalities for multiple blockchains like ethereum - USDT, USDC, BNB, UNI; Arweave - ArDrive, Verto.
+
+## History-tx package
+
+This package is used for retreiving history transactions for user of supported blockchains like ethereum, binance, solana, polkadot, arweave.
