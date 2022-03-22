@@ -36,5 +36,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@dojima-wallet/connection": "^0.0.1-alpha.12",
+    "@dojima-wallet/types": "^0.0.1-alpha.4"
+  }
 }
