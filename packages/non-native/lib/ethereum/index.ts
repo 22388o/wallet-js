@@ -1,3 +1,3 @@
-import Balance from "./balance";
+import Erc20TokenBalance from "./balance";
 
-export { Balance };
+export default Erc20TokenBalance;
