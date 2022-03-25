@@ -37,7 +37,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@dojima-wallet/account": "^0.0.1-alpha.11",
     "@dojima-wallet/connection": "^0.0.1-alpha.12",
-    "@dojima-wallet/types": "^0.0.1-alpha.4"
+    "@dojima-wallet/types": "^0.0.1-alpha.4",
+    "node-fetch": "^2.6.6"
   }
 }

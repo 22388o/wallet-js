@@ -1,51 +1,26 @@
-export interface HttpResponse<T> extends Response {
-  parsedBody?: T;
-}
+import fetch, { RequestInit } from "node-fetch";
 
-async function http<T>(request: RequestInfo): Promise<HttpResponse<T>> {
-  const response: HttpResponse<T> = await fetch(request);
+export async function http(path: string, args: RequestInit) {
+  const response = await fetch(path, args);
   try {
-    // may error if there is no body
-    response.parsedBody = await response.json();
-  } catch (error: any) {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response;
+  } catch (error) {
     throw new Error(error.message);
   }
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return response;
 }
-
-async function get<T>(
-  path: string | any,
-  args: RequestInit = { method: "get" }
-): Promise<HttpResponse<T>> {
-  return await http<T>(new Request(path, args));
+export async function get(path: string, args: RequestInit) {
+  return await http(path, args);
 }
-
-async function post<T>(
-  body: any,
-  args: RequestInit = {
-    method: "post",
-    body: JSON.stringify(body),
-    redirect: "follow",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  },
-  path: string | any
-): Promise<HttpResponse<T>> {
-  return await http<T>(new Request(path, args));
+export async function post(path: string, args: RequestInit) {
+  return await http(path, args);
 }
-
-async function put<T>(
-  path: string | any,
+export async function put(
+  path: string,
   body: any,
   args: RequestInit = { method: "put", body: JSON.stringify(body) }
-): Promise<HttpResponse<T>> {
-  return await http<T>(new Request(path, args));
+) {
+  return await http(path, args);
 }
-
-export { get, post, put };
-export default http;
