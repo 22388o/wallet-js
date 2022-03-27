@@ -3,7 +3,7 @@ import { SolanaAccount } from "@dojima-wallet/account";
 import { NetworkType } from "@dojima-wallet/types";
 import { SolTxDataResult } from "./utils/types";
 
-export default class SolanaTransaction extends SolanaAccount {
+export default class SolanaTransactions extends SolanaAccount {
   constructor(mnemonic: string, network: NetworkType) {
     super(mnemonic, network);
   }

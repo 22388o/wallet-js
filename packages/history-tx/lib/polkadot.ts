@@ -13,7 +13,7 @@ export default async function getPolka() {
   //   };
 
   var response = await post(
-    rawBody,
+    "https://westend.api.subscan.io/api/scan/transfers",
     {
       method: "post",
       body: rawBody,
@@ -21,8 +21,7 @@ export default async function getPolka() {
       headers: {
         "Content-Type": "application/json",
       },
-    },
-    "https://westend.api.subscan.io/api/scan/transfers"
+    }
   );
   console.log(response);
 }
