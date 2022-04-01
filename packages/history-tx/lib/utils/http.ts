@@ -1,7 +1,13 @@
 import fetch, { RequestInit } from "node-fetch";
 
 export async function http(path: string, args: RequestInit) {
-  const response = await fetch(path, args);
+  const argsInit: RequestInit = {
+    ...args,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+  const response = await fetch(path, argsInit);
   try {
     if (!response.ok) {
       throw new Error(response.statusText);
