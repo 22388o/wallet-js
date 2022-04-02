@@ -27,7 +27,9 @@
     "url": "git+https://github.com/dojimanetwork/wallet-js.git"
   },
   "scripts": {
-    "build": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js"
+    "build_rm:ylck": "rm -rf dist/ node_modules/ yarn.lock && yarn && webpack --config ../../webpack/webpack.config.js",
+    "build_rm:nm": "rm -rf dist/ node_modules/ && yarn && webpack --config ../../webpack/webpack.config.js",
+    "build": "webpack --config ../../webpack/webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/dojimanetwork/wallet-js/issues"
