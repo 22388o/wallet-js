@@ -12,7 +12,7 @@ export type ActionType =
 
 export type TxHistoryParams = {
   apiKey: string;
-  action: ActionType;
+  address: string;
   page?: number;
   limit?: number;
   sort?: SortType;
@@ -50,7 +50,6 @@ export type TransactionHistoryResult = {
 export type TxHashDataParams = {
   hash: string;
   apiKey: string;
-  action: ActionType;
 };
 
 export type EthTxHashDataResult = {

@@ -30,6 +30,7 @@
     "@xchainjs/xchain-util": "^0.6.0",
     "arweave": "^1.10.23",
     "arweave-mnemonic-keys": "^0.0.9",
+    "axios": "^0.26.1",
     "bignumber.js": "^9.0.2",
     "bip32": "^3.0.1",
     "bip39": "^3.0.4",
